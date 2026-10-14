@@ -13,48 +13,91 @@ import {
 const args = process.argv.slice(2);
 const command = args[0];
 
-switch (command) {
-  case 'version':
-  case '--version':
-  case '-v':
-    showVersion();
-    break;
+async function main() {
+  switch (command) {
+    // Show CLI version
+    case 'version':
+    case '--version':
+    case '-v':
+      showVersion();
+      break;
 
-  case 'to-webp':
-    render(<ToWebpView />);
-    break;
+    // Convert images in current directory to WebP
+    case 'to-webp':
+      render(<ToWebpView />);
+      break;
 
-  case 'hello':
-    render(<App name={args[1]} />);
-    break;
+    // Interactive hello command
+    case 'hello':
+      render(<App name={args[1]} />);
+      break;
 
-  case '--help':
-  case '-h':
-    console.log(`
+    // Shell completion
+    case 'completion':
+      switch (args[1]) {
+        case 'zsh':
+          await showCompletion();
+          break;
+
+        case 'install':
+          await installCompletion();
+          break;
+
+        default:
+          console.log(`
+Usage:
+  clip completion zsh      Print Zsh completion script
+  clip completion install  Install Zsh completion
+`);
+      }
+      break;
+
+    // Help
+    case '--help':
+    case '-h':
+    case 'help':
+      console.log(`
 Clip CLI
 
+Usage:
+  clip <command> [options]
+
 Commands:
-  clip              Start interactive mode
-  clip version      Show CLI version
-  clip to-webp      Convert images to WebP
-  clip hello [name] Say hello
-  clip --help       Show help
+  version              Show CLI version
+  to-webp              Convert images in current folder to WebP
+  hello [name]         Say hello
+  completion zsh       Print Zsh completion script
+  completion install   Install Zsh completion
+
+Options:
+  -v, --version        Show version
+  -h, --help           Show help
+
+Examples:
+  clip version
+  clip to-webp
+  clip hello Anna
+  clip completion install
 `);
-    break;
+      break;
 
-  case undefined:
-    render(<App />);
-    break;
+    // No arguments: start Ink interface
+    case undefined:
+      render(<App />);
+      break;
 
-  case 'completion':
-    showCompletion();
-    break;
-
-  case 'install-completion':
-    installCompletion();
-    break;
-
-  default:
-    console.error(`Unknown command: ${command}`);
-    process.exitCode = 1;
+    // Unknown command
+    default:
+      console.error(`Unknown command: ${command}`);
+      console.error('Run "clip --help" for available commands.');
+      process.exitCode = 1;
+  }
 }
+
+main().catch((error: unknown) => {
+  console.error(
+    'Error:',
+    error instanceof Error ? error.message : String(error)
+  );
+  process.exitCode = 1;
+});
