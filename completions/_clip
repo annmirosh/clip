@@ -1,0 +1,17 @@
+#compdef clip
+
+_clip() {
+  local -a commands
+
+  commands=(
+    'version:Show CLI version'
+    'to-webp:Convert images to WebP'
+    'hello:Say hello'
+  )
+
+  if (( CURRENT == 2 )); then
+    _describe 'command' commands
+  fi
+}
+
+compdef _clip clip
