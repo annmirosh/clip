@@ -6,11 +6,53 @@ _clip() {
   commands=(
     'version:Show CLI version'
     'to-webp:Convert images to WebP'
+    '2-webp:Convert images to WebP (alias)'
     'hello:Say hello'
+    'completion:Manage shell completion'
   )
 
+  # Level 1: clip <TAB>
   if (( CURRENT == 2 )); then
     _describe 'command' commands
+    return
+  fi
+
+  # Level 2+: clip <command> <TAB>
+  case "${words[2]}" in
+
+    to-webp|2-webp)
+      _clip_to_webp
+      ;;
+
+    completion)
+      _clip_completion
+      ;;
+
+    hello)
+      _message 'Enter a name'
+      ;;
+
+  esac
+}
+
+_clip_to_webp() {
+  _arguments -s \
+    '--quality[WebP quality]:quality:(60 75 80 90 100)' \
+    '--dir[Directory to convert]:directory:_files -/' \
+    '--recursive[Include subdirectories]' \
+    '--help[Show help]'
+}
+
+_clip_completion() {
+  local -a subcommands
+
+  subcommands=(
+    'zsh:Print Zsh completion script'
+    'install:Install Zsh completion'
+  )
+
+  if (( CURRENT == 3 )); then
+    _describe 'completion command' subcommands
   fi
 }
 

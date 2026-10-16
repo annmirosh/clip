@@ -24,6 +24,7 @@ async function main() {
 
     // Convert images in current directory to WebP
     case 'to-webp':
+    case '2-webp':
       render(<ToWebpView />);
       break;
 
