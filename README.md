@@ -1,3 +1,13 @@
+<div align="center"> 
+  <img
+    src="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo.svg"
+    alt="My Logo"
+    width="20"
+  />
+  <div>Powered By Ann</div>
+</div>
+<br>
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo.svg" alt="Clip Logo" width="100">
 </p>
