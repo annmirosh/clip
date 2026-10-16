@@ -1,10 +1,11 @@
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="docs/imgs/clip-logo-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="docs/imgs/clip-logo-black.svg">
-<img src="docs/imgs/clip-logo-black.svg" alt="CLIP LOGO" width="120">
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-black.svg">
+<img src="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-light.svg#gh-dark-mode-only" alt="CLIP LOGO" width="120">
+<img src="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-black.svg#gh-light-mode-only" alt="CLIP LOGO" width="120">
 </picture>
 
-# Clip CLI 📎
+# Clip CLI
 
 **Clip** is a little helper for your CLI.
 
