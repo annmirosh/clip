@@ -1,6 +1,10 @@
-<img src="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-black.svg#gh-light-mode-only" alt="CLIP LOGO" width="120">
-
-<img src="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-light.svg#gh-dark-mode-only" alt="CLIP LOGO" width="120">
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-light.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-light.svg">
+    <img alt="My Project Logo" src="https://raw.githubusercontent.com/annmirosh/clip/refs/heads/main/docs/imgs/clip-logo-black.svg" width="300">
+  </picture>
+</p>
 
 # Clip CLI
 
