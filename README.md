@@ -1,6 +1,6 @@
 <picture>
-<img src="docs/imgs/clip-logo-black.svg#gh-dark-mode-only" alt="CLIP LOGO" width="720">
-<img src="docs/imgs/clip-logo-light.svg#gh-light-mode-only" alt="CLIP LOGO" width="720">
+<img src="docs/imgs/clip-logo-black.svg#gh-dark-mode-only" alt="CLIP LOGO" width="120">
+<img src="docs/imgs/clip-logo-light.svg#gh-light-mode-only" alt="CLIP LOGO" width="120">
 </picture>
 
 # Clip CLI 📎
